@@ -1,21 +1,26 @@
 {
   "name": "@serverless-stack/node",
-  "version": "0.0.2",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "version": "0.0.3",
+  "main": "./dist/esm/index.js",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/esm/index.js"
     }
   },
   "scripts": {
-    "build:cjs": "tsc -p tsconfig-cjs.json",
-    "build:esm": "tsc -p tsconfig-esm.json",
+    "build:esm": "tsc",
     "release": "yarn publish --access public"
   },
   "license": "MIT",
   "dependencies": {
-    "@tsconfig/node14": "^1.0.1"
+    "@graphql-tools/schema": "^8.3.1",
+    "@tsconfig/node14": "^1.0.1",
+    "aws-sdk": "^2.1061.0",
+    "graphql-helix": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.90",
+    "@types/node": "^17.0.10"
   }
 }
