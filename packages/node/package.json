@@ -1,0 +1,21 @@
+{
+  "name": "@serverless-stack/node",
+  "version": "0.0.1",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:esm": "tsc -p tsconfig-esm.json",
+    "release": "yarn publish --access public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tsconfig/node14": "^1.0.1"
+  }
+}
