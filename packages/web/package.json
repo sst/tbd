@@ -1,6 +1,6 @@
 {
   "name": "@serverless-stack/web",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "type": "module",
@@ -13,7 +13,7 @@
   "scripts": {
     "build:esm": "tsc -p tsconfig-esm.json",
     "build:cjs": "tsc -p tsconfig-cjs.json",
-    "release": "yarn publish --access public"
+    "release": "yarn publish --access public --no-git-tag-version"
   },
   "license": "MIT",
   "dependencies": {},

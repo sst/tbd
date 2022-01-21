@@ -1,0 +1,47 @@
+{
+  "name": "turborepo-basic-shared",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "release": "turbo run release --"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "turbo": {
+    "pipeline": {
+      "release": {},
+      "build": {
+        "dependsOn": [
+          "build:cjs",
+          "build:esm"
+        ]
+      },
+      "build:cjs": {
+        "dependsOn": [
+          "^build:cjs"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "build:esm": {
+        "dependsOn": [
+          "^build:esm"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      }
+    }
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  }
+}

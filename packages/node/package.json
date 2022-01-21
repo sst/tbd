@@ -1,6 +1,6 @@
 {
   "name": "@serverless-stack/node",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "main": "./dist/esm/index.js",
   "type": "module",
   "exports": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build:esm": "tsc",
-    "release": "yarn publish --access public"
+    "release": "yarn publish --access public --no-git-tag-version"
   },
   "license": "MIT",
   "dependencies": {
